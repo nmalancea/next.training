@@ -1,21 +1,18 @@
-import fetch from 'isomorphic-unfetch'
-
-import Layout from '../components/Layout'
-import Session from '../components/Session'
+import Layout from '../components/Layout';
+import Session from '../components/Session';
+import fetch from 'isomorphic-unfetch';
 
 const SessionPage = ({ session, rating }) => (
   <Layout>
     <Session {...session} rating={rating} />
   </Layout>
-)
+);
 
 SessionPage.getInitialProps = async ({ query }) => {
-  const res = await fetch(`http://localhost:3001/schedule/${query.slug}`)
-  const session = await res.json()[0]
+  const res = await fetch(`http://localhost:3001/schedule/${query.slug}`);
+  const session = await res.json();
 
-  console.log(session)
+  return { session, rating: query.rating };
+};
 
-  return { session, rating: query.rating }
-}
-
-export default SessionPage
+export default SessionPage;

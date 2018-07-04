@@ -1,16 +1,15 @@
-import Head from 'next/head'
-import Router from 'next/router'
-import NProgress from 'nprogress'
-
-import Header from './Header'
-import Footer from './Footer'
+import Head from 'next/head';
+import Header from './Header';
+import Footer from './Footer';
+import NProgress from 'nprogress';
+import Router from 'next/router';
 
 Router.onRouteChangeStart = url => {
-  console.log(`Loading: ${url}`)
-  NProgress.start()
-}
-Router.onRouteChangeComplete = () => NProgress.done()
-Router.onRouteChangeError = () => NProgress.done()
+  console.log(`Loading: ${url}`);
+  NProgress.start();
+};
+Router.onRouteChangeComplete = () => NProgress.done();
+Router.onRouteChangeError = () => NProgress.done();
 
 export default ({ children, title = 'Nextconf Schedule' }) => (
   <div id="root">
@@ -22,4 +21,4 @@ export default ({ children, title = 'Nextconf Schedule' }) => (
     <main>{children}</main>
     <Footer />
   </div>
-)
+);

@@ -1,5 +1,5 @@
-const explode = () => {
-  throw new Error('explode!')
+function explode() {
+  throw new Error('explode!');
 }
 
-export default () => <p>Explode {explode()}</p>
+export default () => <p>Explode! {explode()}</p>;

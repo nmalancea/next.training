@@ -10,7 +10,7 @@ export default ({ value: selected, name = `rating` }) => {
             defaultChecked={5 - selected === i}
             key={`input-${i}`}
           />
-        )
+        );
         acc.push(
           <label
             key={`label-${i}`}
@@ -19,10 +19,10 @@ export default ({ value: selected, name = `rating` }) => {
           >
             {i}
           </label>
-        )
+        );
 
-        return acc
+        return acc;
       }, [])}
     </span>
-  )
-}
+  );
+};

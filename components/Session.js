@@ -1,12 +1,12 @@
-import Link from 'next/link'
-import Rating from './Rating'
+import Link from 'next/link';
+import Rating from './Rating';
 
 const Speaker = ({ speaker, twitter }) =>
   speaker ? (
     <p>
       {speaker} / <a href={`https://twitter.com/${twitter}`}>@{twitter}</a>
     </p>
-  ) : null
+  ) : null;
 
 export default ({ title, description, slug, rating = false, ...props }) => (
   <div className="Session">

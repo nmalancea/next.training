@@ -1,10 +1,10 @@
-import Link from 'next/link'
+import Link from 'next/link';
 
 export default () => (
-  <header>
+  <header className="Header">
     <nav>
       <Link href="/">
-        <a href="">Home</a>
+        <a>Home</a>
       </Link>
       <Link href="/about">
         <a>About</a>
@@ -14,4 +14,4 @@ export default () => (
       </Link>
     </nav>
   </header>
-)
+);
