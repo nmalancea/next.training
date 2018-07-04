@@ -1,0 +1,28 @@
+{
+  "name": "next.training",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "NODE_ENV=production node server.js",
+    "mock-api": "json-server mock-api/db.json --port 3001  --routes mock-api/routes.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "isomorphic-unfetch": "^2.0.0",
+    "next": "^6.0.3",
+    "nprogress": "^0.2.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.0.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-react": "^7.10.0",
+    "json-server": "^0.14.0"
+  }
+}
