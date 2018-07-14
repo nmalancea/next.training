@@ -1,7 +1,5 @@
 /node_modules
-/tmp
-
-# Next.js
 /.next
+/tmp
 /out
-/bundles
+/.vscode

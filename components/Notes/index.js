@@ -1,5 +1,5 @@
-import CodeMirror from 'react-codemirror'
-require('codemirror/mode/markdown/markdown')
+import CodeMirror from 'react-codemirror';
+require('codemirror/mode/markdown/markdown');
 
 const Notes = props => (
   <CodeMirror
@@ -7,6 +7,6 @@ const Notes = props => (
     value={`# My notes\n\n- [url](${props.url})\n\n...`}
     options={{ mode: 'markdown' }}
   />
-)
+);
 
-export default Notes
+export default Notes;

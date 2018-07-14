@@ -1,44 +1,44 @@
-import { Fragment } from 'react'
-import Link from 'next/link'
-import Rating from './Rating'
-import dynamic from 'next/dynamic'
-import Head from 'next/head'
-import './Session.css'
+import { Fragment } from 'react';
+import Link from 'next/link';
+import Rating from './Rating';
+import dynamic from 'next/dynamic';
+import Head from 'next/head';
+import './Session.css';
 
 const Notes = dynamic({
   modules: () => {
     const components = {
       css1: import('codemirror/lib/codemirror.css'),
       css2: import('./Notes/Notes.css'),
-      Notes: import('./Notes')
-    }
+      Notes: import('./Notes'),
+    };
 
-    return components
+    return components;
   },
   render: (props, { Notes, css1, css2 }) => {
     return (
       <Fragment>
         <Head>
           <style>{`
-            ${css1.toString()}
+          ${css1.toString()}
 
             ${css2.toString()}
           `}</style>
         </Head>
         <Notes {...props} />
       </Fragment>
-    )
+    );
   },
-  loading: () => <p>Loading Notes…</p>,
-  ssr: false
-})
+  loading: () => <p>Loading notes…</p>,
+  ssr: false,
+});
 
 const Speaker = ({ speaker, twitter }) =>
   speaker ? (
     <p className="Speaker">
       {speaker} / <a href={`https://twitter.com/${twitter}`}>@{twitter}</a>
     </p>
-  ) : null
+  ) : null;
 
 export default ({
   title,
@@ -53,11 +53,11 @@ export default ({
       <Notes url={`/session/${slug}`} />
       <Rating value={rating} />
     </Fragment>
-  ) : null
+  ) : null;
 
   return (
     <div className="Session">
-      <h2 className="__Speaker">
+      <h2 className="___Speaker">
         <Link
           as={`/session/${slug}?rating=4`}
           href={`/session?slug=${slug}&rating=4`}
@@ -69,5 +69,5 @@ export default ({
       {process.env.SHOW_SPEAKER && <Speaker {...props} />}
       {More}
     </div>
-  )
-}
+  );
+};
