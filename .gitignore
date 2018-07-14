@@ -1,3 +1,7 @@
 /node_modules
-/.next
 /tmp
+
+# Next.js
+/.next
+/out
+/bundles

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "node server.js",
-    "build": "next build",
+    "build": "NODE_ENV=production next build && next export",
     "start": "NODE_ENV=production node server.js",
     "mock-api": "json-server mock-api/db.json --port 3001  --routes mock-api/routes.json"
   },
@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@zeit/next-bundle-analyzer": "^0.1.1",
     "@zeit/next-css": "^0.2.0",
     "@zeit/next-sass": "^0.2.0",
     "express": "^4.16.3",
