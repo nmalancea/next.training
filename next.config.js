@@ -1,8 +1,8 @@
-require('@remy/envy');
-const webpack = require('webpack');
-const withCSS = require('@zeit/next-css');
+require('@remy/envy')
+const webpack = require('webpack')
+const withCSS = require('@zeit/next-css')
 
-const withBundleAnalyzer = require('@zeit/next-bundle-analyzer');
+const withBundleAnalyzer = require('@zeit/next-bundle-analyzer')
 
 module.exports = withCSS(
   withBundleAnalyzer({
@@ -11,13 +11,13 @@ module.exports = withCSS(
     bundleAnalyzerConfig: {
       server: {
         analyzerMode: 'static',
-        reportFilename: '../../bundles/server.html',
+        reportFilename: '../../bundles/server.html'
       },
       browser: {
         analyzerMode: 'static',
-        reportFilename: '../bundles/client.html',
+        reportFilename: '../bundles/client.html'
       },
-      openAnalyzer: true,
+      openAnalyzer: true
     },
     cssModules: false,
     webpack: config => {
@@ -26,13 +26,13 @@ module.exports = withCSS(
           'SHOW_SPEAKER',
           'PORT',
           'API',
-          'NOW_URL',
+          'NOW_URL'
         ])
-      );
+      )
 
-      return config;
+      return config
     },
-    exportPathMap: function() {
+    exportPathMap: async function() {
       return {
         '/': { page: '/' },
         '/about': { page: '/about' },
@@ -40,14 +40,14 @@ module.exports = withCSS(
         '/session/memory': { page: '/session', query: { slug: 'memory' } },
         '/session/rethinking': {
           page: '/session',
-          query: { slug: 'rethinking' },
+          query: { slug: 'rethinking' }
         },
         '/session/passwords': {
           page: '/session',
-          query: { slug: 'passwords' },
+          query: { slug: 'passwords' }
         },
-        '/session/art': { page: '/session', query: { slug: 'art' } },
-      };
-    },
+        '/session/art': { page: '/session', query: { slug: 'art' } }
+      }
+    }
   })
-);
+)
